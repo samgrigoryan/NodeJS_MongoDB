@@ -1,0 +1,38 @@
+<h1>Basket</h1>
+
+<div id="card">
+  {{#if courses.length}}
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Count</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each courses}}
+          <tr>
+            <td>{{title}}</td>
+            <td>{{count}}</td>
+            <td>
+              <button
+                class="btn btn-small js-remove"
+                data-id="{{_id}}"
+              >Delete</button>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <p><strong>Price</strong> <span class="price">{{price}}</span></p>
+
+    <form action="/orders" method="post">
+      <button class="btn btn-primary green" type="submit">To make an order</button>
+    </form>
+
+  {{else}}
+    <h1>Basket Empty...</h1>
+  {{/if}}
+</div>

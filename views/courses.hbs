@@ -1,0 +1,32 @@
+{{#if courses.length}}
+  {{#each courses}}
+    <div class="course_div">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-image">
+              <img src="{{img}}" alt="{{title}}" />
+            </div>
+            <div class="card-content">
+              <span class="card-title">{{title}}</span>
+              <p class="price">{{price}}</p>
+            </div>
+            <div class="card-action actions">
+              <a href="/courses/{{_id}}" target="_blank">Open the Course</a>
+              {{#if @root.isAuth}}
+              <a href="/courses/{{_id}}/edit?allow=true">Edit</a>
+              <form action="/card/add" method="post">
+                <input type="hidden" name="id" value="{{_id}}" />
+                <button class="btn btn-primary" type="submit">Add Card</button>
+              </form>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  {{/each}}
+{{else}}
+  <h1>There are no courses yet...</h1>
+{{/if}}

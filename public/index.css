@@ -1,0 +1,61 @@
+.nav-wrapper {
+  padding: 0 2rem;
+}
+
+.price {
+  font-size: 2rem;
+  color: black;
+}
+
+.card-content {
+  color: black;
+}
+
+.courses_container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.course_div {
+  width: 40%;
+}
+
+.course_div .row {
+  margin-top: 50px;
+}
+
+.card .card-image img {
+  width: 550px;
+  height: 500px;
+}
+
+.course {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.course img {
+  max-width: 600px;
+  height: auto;
+}
+
+.course .price.big {
+  font-size: 2.5rem;
+}
+
+.card .card-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.edit_form {
+  margin-bottom: 20px;
+}
+
+.auth {
+  padding-top: 1rem;
+}

@@ -1,0 +1,176 @@
+<style>
+    body {
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        background: linear-gradient(135deg, #0f1724 0%, #0b2545 70%);
+        color: #eaf3ff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.5;
+    }
+
+    header {
+        padding: 60px 20px;
+        text-align: center;
+        background: linear-gradient(135deg, #0f1724, #1d3557);
+    }
+
+    header h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    header p {
+        font-size: 18px;
+        color: #b9cce0;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        margin: 0 0 12px 0;
+        color: #ffffff;
+    }
+
+    section {
+        margin: 28px 0;
+        max-width: 1100px;
+    }
+
+    h2 {
+        margin: 0 0 14px 0;
+        color: #7cc7ff;
+        font-size: 22px;
+    }
+
+    p {
+        margin: 0 0 12px 0;
+        color: #d6eaf8;
+    }
+
+
+    .course-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    .course {
+        background: rgba(255, 255, 255, 0.04);
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .course h3 {
+        margin-top: 0;
+        color: #4ab0ff;
+    }
+
+    /* Адаптация для узких экранов */
+    @media (max-width: 1000px) {
+        .course {
+            width: calc(50% - 16px);
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .course {
+            width: calc(100% - 16px);
+        }
+
+        h1 {
+            font-size: 26px;
+        }
+    }
+
+    .course p {
+        margin: 0;
+        color: #bcd8ef;
+        font-size: 14px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 40px 20px;
+        background: #0b2545;
+        font-size: 14px;
+    }
+</style>
+
+<header>
+    <h1>Изучи современные языки и технологии программирования</h1>
+    <p>Наша платформа объединяет курсы по самым востребованным языкам и фреймворкам.
+        Здесь вы сможете освоить основы и продвинутые темы, практиковаться на реальных проектах и
+        уверенно двигаться в сторону карьеры разработчика.</p>
+</header>
+
+<section>
+    <h2>О платформе</h2>
+    <p>Наша цель — давать четкие и прикладные знания. Все курсы сфокусированы на практике: вы будете решать реальные
+        задачи и собирать проекты, которые можно демонстрировать в резюме.</p>
+    <p>Материал разбит на небольшие уроки с домашними заданиями. Платформа подходит как начинающим, так и тем, кто хочет
+        углубить профильные навыки.</p>
+</section>
+
+<section>
+    <h2>Наши курсы</h2>
+    <div class="course-list">
+        <div class="course">
+            <h3>JavaScript</h3>
+            <p>Основной язык веб-разработки. Освойте синтаксис, работу с DOM, события, промисы и современные
+                стандарты ES6+.</p>
+        </div>
+        <div class="course">
+            <h3>React</h3>
+            <p>Популярная библиотека для создания интерфейсов. Вы научитесь работать с компонентами, хуками и
+                строить масштабируемые SPA.</p>
+        </div>
+        <div class="course">
+            <h3>Vue.js</h3>
+            <p>Простой и удобный фреймворк. Идеален для быстрого старта в мире front-end разработки. Мы разберём
+                Vue Router, Vuex и Composition API.</p>
+        </div>
+        <div class="course">
+            <h3>Angular</h3>
+            <p>Мощный фреймворк для создания больших приложений. Формы, RxJS, модульная архитектура и лучшие
+                практики для работы в команде.</p>
+        </div>
+        <div class="course">
+            <h3>Node.js</h3>
+            <p>Серверная разработка на JavaScript. Создание REST API, работа с файлами, модулями и подключение
+                баз данных.</p>
+        </div>
+        <div class="course">
+            <h3>TypeScript</h3>
+            <p>JavaScript с типами. Улучшает качество кода и предотвращает ошибки. Вы научитесь использовать
+                интерфейсы, generics и декораторы.</p>
+        </div>
+        <div class="course">
+            <h3>HTML & CSS</h3>
+            <p>Базовые кирпичики веба. Создание адаптивных страниц, flexbox, grid и современные техники
+                стилизации.</p>
+        </div>
+        <div class="course">
+            <h3>Python</h3>
+            <p>Универсальный язык: от веба до анализа данных и машинного обучения. Прост в изучении, но
+                невероятно мощный.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Начни учиться уже сегодня</h2>
+    <p>Регистрация займёт всего минуту, и вы получите доступ к десяткам курсов.
+        Учитесь в удобное время, проходите задания и практикуйтесь.
+        Программирование — это навык, который открывает двери в будущее.</p>
+</section>
+
+
+<footer>
+    <p>© 2025 Онлайн-академия программирования. Все права защищены.</p>
+</footer>
