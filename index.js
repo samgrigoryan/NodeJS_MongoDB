@@ -25,22 +25,23 @@ const hbs = exphbs.create({
 
 const store = new MongoStore({
   collection: 'sessions',
-  uri: MONGODB_URI
+  uri: MONGODB_URI,
+  
 })
 
 app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
 app.set("views", "views");
 
-app.use(async (req, res, next) => {
-  try {
-    const user = await User.findById("68d9122d992642a6b66d0570");
-    req.user = user;
-    next();
-  } catch (e) {
-    console.log(e);
-  }
-});
+// app.use(async (req, res, next) => {
+//   try {
+//     const user = await User.findById("68d9122d992642a6b66d0570");
+//     req.user = user;
+//     next();
+//   } catch (e) {
+//     console.log(e);
+//   }
+// });
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extends: true }));
@@ -67,15 +68,15 @@ async function start() {
   try {
     await mongoose.connect(MONGODB_URI);
 
-    const candidate = await User.findOne();
-    if (!candidate) {
-      const user = new User({
-        email: "samvel@gmail.com",
-        name: "Samvel",
-        card: { items: [] },
-      });
-      await user.save();
-    }
+    // const candidate = await User.findOne();
+    // if (!candidate) {
+    //   const user = new User({
+    //     email: "samvel@gmail.com",
+    //     name: "Samvel",
+    //     card: { items: [] },
+    //   });
+    //   await user.save();
+    // }
 
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);

@@ -6,7 +6,9 @@ const userSchema = new Schema({
     required: true,
   },
 
-  name: {
+  name: String,
+
+  password: {
     type: String,
     required: true,
   },
@@ -70,9 +72,9 @@ userSchema.methods.removeFromCard = function (id) {
   return this.save();
 };
 
-userSchema.methods.clearCart = function() {
-  this.card = {items: []}
-  return this.save()
-}
+userSchema.methods.clearCart = function () {
+  this.card = { items: [] };
+  return this.save();
+};
 
 module.exports = model("User", userSchema);
