@@ -7,6 +7,10 @@ router.get("/login", async (req, res) => {
   res.render("auth/login", {
     title: "Login page",
     isLogin: true,
+    error: {
+      reg_error: req.flash("reg_error"),
+      log_error: req.flash("log_error")
+    }
   });
 });
 
@@ -36,10 +40,11 @@ router.post("/login", async (req, res) => {
           res.redirect("/");
         });
       } else {
-        res.redirect("/auth/login#register");
+        res.redirect("/auth/login#login");
       }
     } else {
-      res.redirect("/auth/login#register");
+      req.flash("log_error", "Invalid email or password")
+      res.redirect("/auth/login#login");
     }
   } catch (e) {
     console.log(e);
@@ -57,7 +62,8 @@ router.post("/register", async (req, res) => {
     }
 
     if (candidate) {
-      res.redirect("/auth/login");
+      req.flash('reg_error', "User exists")
+      res.redirect("/auth/login#register");
     } else {
       const hashPassword = await bcrypt.hash(reg_password, 10)
       const user = new User({
