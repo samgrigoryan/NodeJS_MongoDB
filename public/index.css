@@ -59,3 +59,8 @@
 .auth {
   padding-top: 1rem;
 }
+
+.error {
+  color: red;
+  font-size: 18px;
+}
