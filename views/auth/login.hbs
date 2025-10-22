@@ -20,7 +20,10 @@
                 <label for="password">Password</label>
                 <span class="helper-text" data-error="Enter the password"></span>
             </div>
-            
+
+            {{#if error}}
+                <p class="error">{{error.log_error}}</p>
+            {{/if}}
             <input type="hidden" name="_csrf" value="{{csrf}}">
 
             <button class="btn btn-primary" type="submit">Sign In</button>
@@ -53,6 +56,9 @@
                 <span class="helper-text" data-error="Enter your password again"></span>
             </div>
 
+            {{#if error}}
+                <p class="error">{{error.reg_error}}</p>
+            {{/if}}
             <input type="hidden" name="_csrf" value="{{csrf}}">
 
             <button class="btn btn-primary" type="submit">Sign Up</button>
